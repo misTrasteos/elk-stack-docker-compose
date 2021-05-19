@@ -1,0 +1,12 @@
+filebeat.inputs:
+
+- type: log
+  enabled: true
+  paths:
+    - /logs/log.log
+  fields:
+    origin: custom-origin
+  fields_under_root: true
+
+output.logstash:
+  hosts: ["logstash:5044"]
